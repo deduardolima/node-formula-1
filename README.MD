@@ -1,81 +1,43 @@
-<div align="center">
+# 🏎️ Node Formula 1 API
 
-  <img src="./.github/assets/blue-saiyan-bg.png" alt="Logo" height="200">
-  <h1 align="center"><strong>NODE BOILERPLATE - BLUE EDITION</strong></h1>
-  <p align="center">
-	  Don't start a new Node project from zero!<br> Use this simple <b>Nodejs</b> boilerplate with pre-configured <b>Typescript</b> in a modern way.
-  </p>
+API REST desenvolvida durante o Bootcamp da [DIO](https://www.dio.me), com melhorias próprias.
 
-</div>
+## 🚀 Tecnologias
+- Node.js
+- TypeScript
+- Fastify
+- CORS
 
-<br />
+## ✨ Melhorias implementadas
+- Correção de bug de IDs duplicados nos pilotos (Lewis Hamilton e Lando Norris tinham o mesmo id)
+- Rotas organizadas em módulos separados por domínio (teams.ts e drivers.ts), usando plugins do Fastify
+- Centralização dos dados em database.ts
+- Tipagem das entidades com interfaces em types.ts
+- Endpoint `GET /teams/:id` — busca de equipe por ID (não existia no projeto original)
+- Endpoint `GET /drivers/search?team=NOME` — busca de pilotos filtrando por nome da equipe (case insensitive e busca parcial)
+- Tratamento de erros com status codes apropriados 400 e 404
+- Padronização das respostas em JSON
 
-  <!-- Badges -->
-<div align="center">
-  
-  [![TypeScript version][ts-badge]][typescript-5-4]
-  [![Node.js version][nodejs-badge]][nodejs]
 
-</div>
-
-# 🚀 Technologies
-
-This code source was developed with the following items:
-
-### 📦 Dependencies
-
-- [typescript][typescript-npm] - Superset for application scale JavaScript development
-- [tsx][tsx-npm] - TypeScript Execute (tsx): Enable Node.js to run TypeScript
-- [tsup][tsup-npm] - Bundle your TypeScript library with no config, powered by esbuild
-- [@types/node][@types/node-npm] - type definitions for node
-
-### 📄 Files
-
-- `.gitignore` - Ignore folders like node_modules
-- `.env` - Enviroment variables
-- `tsconfig.json` - Typescript configure Options
-
-### ⚡ Scripts
-
-- `npm run dist`: Compiles TypeScript files to JavaScript in the dist directory.
-- `npm run start:dev`: Runs the server in development mode with environment variables loaded from the .env file.
-- `npm run start:watch`: Runs the server in development mode with support for automatic reload on file changes.
-- `npm run start:dist`: Compiles the project and runs the compiled version from the dist directory.
-
-# 👨‍💻 How To Use
-
-click in **[Use this template]** OR
-
-To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js v20+](https://nodejs.org/en/) + [NPM v10+](https://nodejs.org/en/) installed on your computer. From your command line:
-
-```bash
-# Clone this repository
-$ git clone https://github.com/felipeAguiarCode/node-blue-boilerplate
-
-# Go into the repository
-$ cd node-blue-boilerplate
-
-# Install dependencies
-$ npm install
+## 📦 Como executar
+```
+npm install
+npm run dev
 ```
 
-## Author
+## 📌 Endpoints
+| Método | Rota                       | Descrição                                |
+|--------|------------------------------|--------------------------------------------|
+| GET    | /teams                      | Lista todas as equipes                     |
+| GET    | /teams/:id                  | Busca equipe por ID                        |
+| GET    | /drivers                    | Lista todos os pilotos                     |
+| GET    | /drivers/:id                | Busca piloto por ID                        |
+| GET    | /drivers/search?team=NOME   | Busca pilotos por nome da equipe           |
 
-| [<img src="https://avatars3.githubusercontent.com/u/37452836?s=96&v=4"><br><sub>Felipe Aguiar</sub>](https://github.com/felipeAguiarCode) |
-| :---------------------------------------------------------------------------------------------------------------------------------------: |
-|                                            [Linkedin](www.linkedin.com/in/felipe-aguiar-exe/)                                             |
 
-# Credits
+## 🔗 Links úteis
+- [Repositório original (DIO)](https://github.com/digitalinnovationone/node-formula-1)
+- [Certificado do curso](#)
 
-icons by [Pino Lamanna][dribble-icon]
-
-[typescript]: https://www.typescriptlang.org/
-[typescript-5-4]: https://www.typescriptlang.org/
-[ts-badge]: https://img.shields.io/badge/TypeScript-5.4-blue.svg
-[nodejs-badge]: https://img.shields.io/badge/Node.js->=%2020.00-blue.svg
-[nodejs]: https://nodejs.org/
-[dribble-icon]: https://dribbble.com/Schakalwal
-[typescript-npm]: https://www.npmjs.com/package/typescript
-[tsx-npm]: https://www.npmjs.com/package/tsx
-[tsup-npm]: https://www.npmjs.com/package/tsup
-[@types/node-npm]: https://www.npmjs.com/package/@types/node
+## 👨‍💻 Autor
+Diego — [LinkedIn](https://www.linkedin.com/in/diego-eduardo-lima/) | [GitHub](https://github.com/deduardolima)
